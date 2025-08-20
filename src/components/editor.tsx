@@ -1,4 +1,7 @@
-import CodeMirror, { EditorView } from "@uiw/react-codemirror";
+import CodeMirror, {
+	EditorView,
+	ReactCodeMirrorProps,
+} from "@uiw/react-codemirror";
 import { markdown } from "@codemirror/lang-markdown";
 import { oneDark } from "@codemirror/theme-one-dark";
 
@@ -6,22 +9,21 @@ const theme = EditorView.theme({
 	"&.cm-focused": {
 		outline: "none !important",
 	},
+	".cm-gutterElement": {
+		"user-select": "none !important",
+		"-webkit-user-select": "none !important",
+		cursor: "default !important",
+	},
 });
 
-interface Props {
-	content: string;
-	onChange: (content: string) => void;
-}
-
-function Editor({ content, onChange }: Props) {
+function Editor(props: ReactCodeMirrorProps) {
 	return (
 		<CodeMirror
-			value={content}
 			autoFocus
 			placeholder={"# Markor"}
 			theme={oneDark}
-			extensions={[markdown(), theme]}
-			onChange={onChange}
+			extensions={[EditorView.lineWrapping, markdown(), theme]}
+			{...props}
 		/>
 	);
 }

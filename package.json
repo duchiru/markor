@@ -1,6 +1,6 @@
 {
 	"name": "markor",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "A simple Markdown editor",
 	"author": "Nguyen The Viet <https://github.com/duchiru>",
 	"private": true,
