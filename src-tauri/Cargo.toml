@@ -1,6 +1,6 @@
 [package]
 name = "markor"
-version = "0.1.0"
+version = "0.2.0"
 description = "A simple Markdown editor"
 authors = ["Nguyen The Viet <https://github.com/duchiru>"]
 edition = "2021"
@@ -18,7 +18,6 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = [] }
-tauri-plugin-opener = "2"
+tauri = { version = "2", features = ["macos-private-api"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
