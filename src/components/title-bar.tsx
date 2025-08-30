@@ -23,13 +23,26 @@ function TitleBar({
 	}, [showPreview]);
 
 	return (
-		<div data-tauri-drag-region className="flex h-8 flex-row-reverse gap-1 p-1">
-			<TitleBarButton active={showPreview} onClick={togglePreview}>
-				P
-			</TitleBarButton>
-			<TitleBarButton active={showEditor} onClick={toggleEditor}>
-				E
-			</TitleBarButton>
+		<div
+			data-tauri-drag-region
+			className="ml-16 flex h-8 flex-row-reverse gap-1 p-1"
+		>
+			<div className="flex flex-row gap-1">
+				<TitleBarButton
+					active={showEditor}
+					onClick={toggleEditor}
+					className="h-6 w-6"
+				>
+					E
+				</TitleBarButton>
+				<TitleBarButton
+					active={showPreview}
+					onClick={togglePreview}
+					className="h-6 w-6"
+				>
+					P
+				</TitleBarButton>
+			</div>
 		</div>
 	);
 }

@@ -1,6 +1,6 @@
 [package]
 name = "markor"
-version = "0.3.0"
+version = "0.4.0"
 description = "A simple Markdown editor"
 authors = ["Nguyen The Viet <https://github.com/duchiru>"]
 edition = "2021"
@@ -21,3 +21,6 @@ tauri-build = { version = "2", features = [] }
 tauri = { version = "2", features = ["macos-private-api"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-global-shortcut = "2"
